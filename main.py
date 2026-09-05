@@ -68,12 +68,6 @@ def go(config: DictConfig):
                 },
             )
 
-        if "data_check" in active_steps:
-            ##################
-            # Implement here #
-            ##################
-            pass
-
 
         if "data_check" in active_steps:
 
@@ -90,6 +84,23 @@ def go(config: DictConfig):
                     "kl_threshold": config["data_check"]["kl_threshold"],
                     "min_price": config["etl"]["min_price"],
                     "max_price": config["etl"]["max_price"],
+                },
+            )
+
+        if "data_split" in active_steps:
+
+            _ = mlflow.run(
+            os.path.join(
+                hydra.utils.get_original_cwd(),
+                "components",
+                "train_val_test_split"
+                ),
+                "main",
+            parameters={
+                    "input": "clean_sample.csv:latest",
+                    "test_size": config["modeling"]["test_size"],
+                    "random_seed": config["modeling"]["random_seed"],
+                    "stratify_by": config["modeling"]["stratify_by"],
                 },
             )
 
