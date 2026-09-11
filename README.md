@@ -16,6 +16,12 @@ In this project you will build such a pipeline.
   * [Running the entire pipeline or just a selection of steps](#Running-the-entire-pipeline-or-just-a-selection-of-steps)
   * [Pre-existing components](#pre-existing-components)
 
+
+
+##Links
+Github Link- https://github.com/katiedobay/Project-Build-an-ML-Pipeline-Starter
+W & B Link- https://wandb.ai/kdobay-western-governors-university/nyc_airbnb?nw=nwuserkdobay
+
 ## Preliminary steps
 
 ### Supported Operating Systems
